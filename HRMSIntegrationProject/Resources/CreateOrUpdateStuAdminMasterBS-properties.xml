@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="root_descriptor_alias">STUDENTS_ADMISSION_MASTER</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTADMISIONNO:db_column_scale">0</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTSTATUS:db_column_type">VARCHAR2</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.LOAD_TS:db_column_type">TIMESTAMP</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.TEACHERID:db_column_type">VARCHAR2</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_9">READFLAG</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.READFLAG:db_column_type">CHAR</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_8">TEACHERID</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_7">STUDENTPHOTO</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTCELLNO:db_column_scale">0</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTJOININGCLASS:db_column_type">VARCHAR2</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_6">STUDENTSTATUS</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_5">STUDENTCELLNO</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_4">STUDENTADMISIONNO</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_3">STUDENTADMISSIONDATE</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_table_type">TABLE</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_2">STUDENTJOININGCLASS</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_1">STUDENTNAME</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_0">STUDENTID</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTADMISIONNO:db_column_not_null">false</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTJOININGCLASS:db_column_not_null">true</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTNAME:db_column_not_null">true</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTID:db_column_type">VARCHAR2</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTADMISSIONDATE:db_column_type">DATE</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTSTATUS:db_column_size">10</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.LOAD_TS:db_column_not_null">false</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_11">UPD_TS</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_10">LOAD_TS</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.TEACHERID:db_column_size">6</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.READFLAG:db_column_size">1</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTJOININGCLASS:db_column_size">10</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.LOAD_TS:db_column_scale">6</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTPHOTO:db_column_not_null">false</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTADMISSIONDATE:db_column_not_null">true</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTCELLNO:db_column_type">NUMBER</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTID:db_column_size">6</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTCELLNO:db_column_not_null">false</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTADMISIONNO:db_column_type">NUMBER</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTID:db_column_not_null">true</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.TEACHERID:db_column_not_null">false</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.UPD_TS:db_column_not_null">false</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTSTATUS:db_column_not_null">true</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.UPD_TS:db_column_type">TIMESTAMP</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTADMISIONNO:db_column_precision">10</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.READFLAG:db_column_not_null">false</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTNAME:db_column_type">VARCHAR2</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTPHOTO:db_column_type">BLOB</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTCELLNO:db_column_precision">10</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTNAME:db_column_size">200</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.UPD_TS:db_column_scale">6</entry>
+</properties>

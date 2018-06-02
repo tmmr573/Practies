@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org" elementFormDefault="qualified">
+  <xsd:element name="CreateOrUpdateStuAdminMaster">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="studentid" type="xsd:string"/>
+         <xsd:element name="studentname" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="studentjoiningclass" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="studentadmissiondate" type="xsd:dateTime" minOccurs="0"/>
+         <xsd:element name="studentadmisionno" type="xsd:long" minOccurs="0" nillable="true"/>
+         <xsd:element name="studentcellno" type="xsd:long" minOccurs="0" nillable="true"/>
+         <xsd:element name="studentstatus" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="studentphoto" type="xsd:base64Binary" minOccurs="0" nillable="true"/>
+         <xsd:element name="teacherid" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="readflag" type="xsd:string" minOccurs="0" nillable="true"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

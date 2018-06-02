@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org" elementFormDefault="unqualified">
+  <xsd:element name="DBAuditLogData" type="DBAuditData">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="JMSAuditLogData" type="JMSAuditData">
+		<xsd:annotation>
+			<xsd:documentation>
+				A sample element
+			</xsd:documentation>
+		</xsd:annotation>
+  </xsd:element>
+  
+  <xsd:complexType name="DBAuditData">
+		<xsd:sequence>
+			<xsd:element name="integrationServiceName" type="xsd:string" />
+			<xsd:element name="integrationComponent" type="xsd:string" />
+			<xsd:element name="integrationComponentDetail" type="xsd:string" />
+			<xsd:element name="managedServerName" type="xsd:string" />
+			<xsd:element name="sourcerequest" type="xsd:string" />
+			<xsd:element name="targetrequest" type="xsd:string" />
+			<xsd:element name="targetSystem" type="xsd:string" />
+			<xsd:element name="sourceSystem" type="xsd:string" />
+			<xsd:element name="uniqueId" type="xsd:string" />
+			<xsd:element name="dateTime" type="xsd:dateTime" />
+		</xsd:sequence>
+	</xsd:complexType>
+        
+        <xsd:complexType name="JMSAuditData">
+		<xsd:sequence>
+			<xsd:element name="integrationServiceName" type="xsd:string" />
+			<xsd:element name="integrationComponent" type="xsd:string" />
+			<xsd:element name="integrationComponentDetail" type="xsd:string" />
+			<xsd:element name="managedServerName" type="xsd:string" />
+			<xsd:element name="sourcerequest" type="xsd:string" />
+			<xsd:element name="targetrequest" type="xsd:string" />
+			<xsd:element name="targetSystem" type="xsd:string" />
+			<xsd:element name="sourceSystem" type="xsd:string" />
+			<xsd:element name="uniqueId" type="xsd:string" />
+			<xsd:element name="dateTime" type="xsd:dateTime" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>

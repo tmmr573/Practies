@@ -1,0 +1,27 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/osb/OSBUtilityService/OSBDBLogServiceBS" name="OSBDBLogServiceBS-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="OSBDBLogServiceBS.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/osb/OSBUtilityService/OSBDBLogServiceBS"/>
+    <wsdl:binding name="OSBDBLogServiceBS_ptt-binding" type="osb:OSBDBLogServiceBS_ptt" xmlns:osb="http://xmlns.oracle.com/pcbpel/adapter/db/osb/OSBUtilityService/OSBDBLogServiceBS">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="merge">
+            <soap:operation soapAction="merge"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="insert">
+            <soap:operation soapAction="insert"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="OSBDBLogServiceBSSelect">
+            <soap:operation soapAction="OSBDBLogServiceBSSelect"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

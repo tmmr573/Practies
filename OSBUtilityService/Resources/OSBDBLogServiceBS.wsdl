@@ -1,0 +1,30 @@
+<wsdl:definitions name="OSBDBLogServiceBS" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/osb/OSBUtilityService/OSBDBLogServiceBS" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/osb/OSBUtilityService/OSBDBLogServiceBS" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/OSBDBLogServiceBS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="OSBDBLogServiceBS_plt">
+    <plt:role name="OSBDBLogServiceBS_role">
+      <plt:portType name="tns:OSBDBLogServiceBS_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/OSBDBLogServiceBS" schemaLocation="OSBDBLogServiceBS_table.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="OSBDBLogServiceBSSelect_inputParameters">
+        <wsdl:part name="OSBDBLogServiceBSSelect_inputParameters" element="top:OSBDBLogServiceBSSelect_IntegrationServiceName_MsgIdInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="OsbservicedblogsCollection_msg">
+        <wsdl:part name="OsbservicedblogsCollection" element="top:OsbservicedblogsCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="OSBDBLogServiceBS_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:OsbservicedblogsCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="insert">
+            <wsdl:input message="tns:OsbservicedblogsCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="OSBDBLogServiceBSSelect">
+            <wsdl:input message="tns:OSBDBLogServiceBSSelect_inputParameters"/>
+            <wsdl:output message="tns:OsbservicedblogsCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

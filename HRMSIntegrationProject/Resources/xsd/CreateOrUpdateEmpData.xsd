@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org" elementFormDefault="qualified">
+  <xsd:element name="CreateOrUpdateEmpData">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="empId" type="xsd:string"/>
+         <xsd:element name="empFirstName" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empMiddleName" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empLastName" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="supervisorId" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="department" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empCurrentLoc" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empWorkLoc" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empDoj" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+         <xsd:element name="empTotalExp" type="xsd:decimal" minOccurs="0" nillable="true"/>
+         <xsd:element name="empType" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empQualification" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empDesignation" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empPhMobile" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="gender" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="createDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+         <xsd:element name="createdBy" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="modifiedDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+         <xsd:element name="modifiedBy" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empEmail" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="internalRate" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="onshoreOffshore" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="terminationDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+         <xsd:element name="targetHrsWeek" type="xsd:decimal" minOccurs="0" nillable="true"/>
+         <xsd:element name="hrStatus" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="legalEntity" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empDob" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+         <xsd:element name="empPan" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="maritalStatus" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="massLoadStatus" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="remunerateStatus" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="locationCountry" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="indEmpFlag" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="payrollStatus" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="regRegion" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="businessUnit" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="deptid" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empPhBusiness" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="empPhOfficial" type="xsd:string" minOccurs="0" nillable="true"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

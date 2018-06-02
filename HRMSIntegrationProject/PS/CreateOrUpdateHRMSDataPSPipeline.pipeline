@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="HRMSIntegrationProject/Resources/WSDL/CreateOrUpdateHRMSDataPS"/>
+            <con:binding>
+                <con:name>execute_bind</con:name>
+                <con:namespace>http://xmlns.oracle.com/osb/HRMSIntegrationProject/CreateOrUpdateHRMSDataPS</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-N3f5723ff.N600a912f.0.15e3c2ddc94.N7dbf">
+            <con:stage id="_StageId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7d29" name="EnrichBody">
+                <con:context/>
+                <con:actions>
+                    <con1:assign varName="EmpDataReq">
+                        <con2:id>_ActionId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7cc7</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7dbd" name="EmpDataLPSCallStage">
+                <con:context/>
+                <con:actions>
+                    <con1:wsCallout>
+                        <con2:id>_ActionId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7d5a</con2:id>
+                        <con1:service ref="HRMSIntegrationProject/PS/CreateOrUpdateEmpDataLPS" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:request>
+                            <con1:payload wrapped="true">EmpDataReq</con1:payload>
+                        </con1:request>
+                        <con1:response>
+                            <con1:payload wrapped="true">EmpDataResponse</con1:payload>
+                        </con1:response>
+                        <con1:requestTransform/>
+                        <con1:responseTransform/>
+                    </con1:wsCallout>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f5723ff.N600a912f.0.15e3c2ddc94.N7dbe">
+            <con:stage id="_StageId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7dbc" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f5723ff.7ccbb01.0.15e97a9474b.N7f9e">
+            <con:stage id="_StageId-N3f5723ff.3e445017.0.15eba15ee16.N8000" name="EnrichBody">
+                <con:context/>
+                <con:actions>
+                    <con1:assign varName="StuMasterReq">
+                        <con2:id>_ActionId-N3f5723ff.3e445017.0.15eba15ee16.N7f8f</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f5723ff.3e445017.0.15eba15ee16.N7fff" name="StuMasterLPSCallStage">
+                <con:context/>
+                <con:actions>
+                    <con1:wsCallout>
+                        <con2:id>_ActionId-N3f5723ff.3e445017.0.15eba15ee16.N7f92</con2:id>
+                        <con1:service ref="HRMSIntegrationProject/PS/CreateOrUpdateStuMasterLPS" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:request>
+                            <con1:payload wrapped="true">StuMasterReq</con1:payload>
+                        </con1:request>
+                        <con1:response>
+                            <con1:payload wrapped="true">StuMasterReq</con1:payload>
+                        </con1:response>
+                        <con1:requestTransform/>
+                        <con1:responseTransform/>
+                    </con1:wsCallout>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f5723ff.7ccbb01.0.15e97a9474b.N7f9d">
+            <con:stage id="_StageId-N3f5723ff.7ccbb01.0.15e97a9474b.N7f9b" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7ece" name="HRMSOutboundOprBranch">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="CreateOrUpdateStuAdminMaster">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="StuMasterPipelinePairNode">
+                                <con:request>request-N3f5723ff.7ccbb01.0.15e97a9474b.N7f9e</con:request>
+                                <con:response>response-N3f5723ff.7ccbb01.0.15e97a9474b.N7f9d</con:response>
+                            </con:pipeline-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="CreateOrUpdateEmpData">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="CreateOrUpdatePipelinePairNode">
+                                <con:request>request-N3f5723ff.N600a912f.0.15e3c2ddc94.N7dbf</con:request>
+                                <con:response>response-N3f5723ff.N600a912f.0.15e3c2ddc94.N7dbe</con:response>
+                            </con:pipeline-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

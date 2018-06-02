@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org" elementFormDefault="unqualified">
+  <xsd:element name="Osbservicedblogs">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+         <xsd:element name="integrationservicename" type="xsd:string" nillable="true"/>
+         <xsd:element name="integrationcomponent" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="integrationcomponentdetail" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="managedservername" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="loggingtype" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="sourcerequest" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="targetrequest" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="faultmessage" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="errortype" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="targetsystem" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="sourcesystem" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="stacktrace" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="uniqueid" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="errordatetime" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+         <xsd:element name="soainstance" type="xsd:string" minOccurs="0" nillable="true"/>
+         <xsd:element name="updated" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

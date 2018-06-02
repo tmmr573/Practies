@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateEmpData" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateEmpData" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="EmpDataCollection" type="EmpDataCollection"/>
+   <xs:complexType name="EmpDataCollection">
+      <xs:sequence>
+         <xs:element name="EmpData" type="EmpData" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="EmpData">
+      <xs:sequence>
+         <xs:element name="rowId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="empId" type="string50"/>
+         <xs:element name="empFirstName" type="string1000" minOccurs="0" nillable="true"/>
+         <xs:element name="empMiddleName" type="string1000" minOccurs="0" nillable="true"/>
+         <xs:element name="empLastName" type="string1000" minOccurs="0" nillable="true"/>
+         <xs:element name="supervisorId" type="string1000" minOccurs="0" nillable="true"/>
+         <xs:element name="department" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="empCurrentLoc" type="string1000" minOccurs="0" nillable="true"/>
+         <xs:element name="empWorkLoc" type="string1000" minOccurs="0" nillable="true"/>
+         <xs:element name="empDoj" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="empTotalExp" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="empType" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="empQualification" type="string1000" minOccurs="0" nillable="true"/>
+         <xs:element name="empDesignation" type="string1000" minOccurs="0" nillable="true"/>
+         <xs:element name="empPhMobile" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="gender" type="string1" minOccurs="0" nillable="true"/>
+         <xs:element name="createDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="createdBy" type="string1000" minOccurs="0" nillable="true"/>
+         <xs:element name="modifiedDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="modifiedBy" type="string1000" minOccurs="0" nillable="true"/>
+         <xs:element name="empEmail" type="xs:string" minOccurs="0" nillable="true"/>
+         <xs:element name="internalRate" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="onshoreOffshore" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="terminationDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="targetHrsWeek" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="hrStatus" type="string10" minOccurs="0" nillable="true"/>
+         <xs:element name="legalEntity" type="string300" minOccurs="0" nillable="true"/>
+         <xs:element name="empDob" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="empPan" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="maritalStatus" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="massLoadStatus" type="string10" minOccurs="0" nillable="true"/>
+         <xs:element name="remunerateStatus" type="string10" minOccurs="0" nillable="true"/>
+         <xs:element name="locationCountry" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="indEmpFlag" type="string10" minOccurs="0" nillable="true"/>
+         <xs:element name="payrollStatus" type="string5" minOccurs="0" nillable="true"/>
+         <xs:element name="regRegion" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="businessUnit" type="string150" minOccurs="0" nillable="true"/>
+         <xs:element name="deptid" type="string50" minOccurs="0" nillable="true"/>
+         <xs:element name="empPhBusiness" type="xs:string" minOccurs="0" nillable="true"/>
+         <xs:element name="empPhOfficial" type="xs:string" minOccurs="0" nillable="true"/>
+         <xs:element name="loadTs" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="updTs" type="xs:dateTime" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="CreateOrUpdateEmpDataSelect_EmpIdInputParameters" type="CreateOrUpdateEmpDataSelect_EmpId"/>
+   <xs:complexType name="CreateOrUpdateEmpDataSelect_EmpId">
+      <xs:sequence>
+         <xs:element name="EmpId" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string50">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="50"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string1000">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="1000"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string1">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="1"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string10">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="10"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string300">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="300"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string150">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="150"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string5">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="5"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

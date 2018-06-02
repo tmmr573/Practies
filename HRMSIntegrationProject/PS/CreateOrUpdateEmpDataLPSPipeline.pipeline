@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config">
+    <con:coreEntry>
+        <con:binding type="Any XML"/>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c96">
+            <con:stage id="_StageId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c94" name="CreateOrUpdateEmpDataStage">
+                <con:context>
+                    <con2:userNsDecl prefix="exam" namespace="http://www.example.org"/>
+                </con:context>
+                <con:actions>
+                    <con1:wsCallout>
+                        <con2:id>_ActionId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c61</con2:id>
+                        <con1:service ref="HRMSIntegrationProject/BS/CreateOrUpdateEmpData" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:operation>CreateOrUpdateEmpDataSelect</con1:operation>
+                        <con1:request>
+                            <con1:body wrapped="false">EmpIdReq</con1:body>
+                        </con1:request>
+                        <con1:response>
+                            <con1:body wrapped="false">EmpIdDataResp</con1:body>
+                        </con1:response>
+                        <con1:requestTransform>
+                            <con1:assign varName="EmpIdReq">
+                                <con2:id>_ActionId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c2f</con2:id>
+                                <con1:expr>
+                                    <con2:xqueryText>&lt;cre:CreateOrUpdateEmpDataSelect_EmpIdInputParameters xmlns:cre="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateEmpData">
+    &lt;cre:EmpId>{data($body/exam:CreateOrUpdateEmpData/exam:empId)}&lt;/cre:EmpId>
+&lt;/cre:CreateOrUpdateEmpDataSelect_EmpIdInputParameters></con2:xqueryText>
+                                </con1:expr>
+                            </con1:assign>
+                        </con1:requestTransform>
+                        <con1:responseTransform/>
+                    </con1:wsCallout>
+                    <con1:ifThenElse>
+                        <con2:id>_ActionId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7bfb</con2:id>
+                        <con1:case id="_BranchId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7bfa">
+                            <con1:condition>
+                                <con2:xqueryText>data($EmpIdDataResp/*:EmpData)!=''</con2:xqueryText>
+                            </con1:condition>
+                            <con1:actions>
+                                <con3:route>
+                                    <con2:id>_ActionId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7662</con2:id>
+                                    <con3:service ref="HRMSIntegrationProject/BS/CreateOrUpdateEmpData" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                    <con3:operation>update</con3:operation>
+                                    <con3:outboundTransform>
+                                        <con1:routing-options>
+                                            <con2:id>_ActionId-N3f5723ff.N600a912f.0.15e3c2ddc94.N75fe</con2:id>
+                                            <con1:qualityOfService>exactly-once</con1:qualityOfService>
+                                        </con1:routing-options>
+                                        <con1:replace varName="body" contents-only="true">
+                                            <con2:id>_ActionId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7630</con2:id>
+                                            <con1:location>
+                                                <con2:xpathText>.</con2:xpathText>
+                                            </con1:location>
+                                            <con1:expr>
+                                                <con2:xqueryTransform>
+                                                    <con2:resource ref="HRMSIntegrationProject/Resources/Transformation/CreateOrUpdateEmpData"/>
+                                                    <con2:param name="EmpDataIn">
+                                                        <con2:path>$body/exam:CreateOrUpdateEmpData</con2:path>
+                                                    </con2:param>
+                                                </con2:xqueryTransform>
+                                            </con1:expr>
+                                        </con1:replace>
+                                    </con3:outboundTransform>
+                                </con3:route>
+                            </con1:actions>
+                        </con1:case>
+                        <con1:default>
+                            <con3:route>
+                                <con2:id>_ActionId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7bc6</con2:id>
+                                <con3:service ref="HRMSIntegrationProject/BS/CreateOrUpdateEmpData" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                <con3:operation>insert</con3:operation>
+                                <con3:outboundTransform>
+                                    <con1:routing-options>
+                                        <con2:id>_ActionId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7b62</con2:id>
+                                        <con1:qualityOfService>exactly-once</con1:qualityOfService>
+                                    </con1:routing-options>
+                                    <con1:replace contents-only="false" varName="body">
+                                        <con2:id>_ActionId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7afe</con2:id>
+                                        <con1:location>
+                                            <con2:xpathText>./*</con2:xpathText>
+                                        </con1:location>
+                                        <con1:expr>
+                                            <con2:xqueryText><![CDATA[<cre:EmpDataCollection xmlns:cre="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateEmpData">
+    <!--Zero or more repetitions:-->
+    <cre:EmpData>
+        <!--Optional:-->
+        <cre:rowId></cre:rowId>
+        <cre:empId>{data($body/exam:CreateOrUpdateEmpData/exam:empId)}</cre:empId>
+        <!--Optional:-->
+        <cre:empFirstName>{data($body/exam:CreateOrUpdateEmpData/exam:empFirstName)}</cre:empFirstName>
+        <!--Optional:-->
+        <cre:empMiddleName>{data($body/exam:CreateOrUpdateEmpData/exam:empMiddleName)}</cre:empMiddleName>
+        <!--Optional:-->
+        <cre:empLastName>{data($body/exam:CreateOrUpdateEmpData/exam:empLastName)}</cre:empLastName>
+        <!--Optional:-->
+        <cre:supervisorId>{data($body/exam:CreateOrUpdateEmpData/exam:supervisorId)}</cre:supervisorId>
+        <!--Optional:-->
+        <cre:department>{data($body/exam:CreateOrUpdateEmpData/exam:department)}</cre:department>
+        <!--Optional:-->
+        <cre:empCurrentLoc>{data($body/exam:CreateOrUpdateEmpData/exam:empCurrentLoc)}</cre:empCurrentLoc>
+        <!--Optional:-->
+        <cre:empWorkLoc>{data($body/exam:CreateOrUpdateEmpData/exam:empWorkLoc)}</cre:empWorkLoc>
+        <!--Optional:-->
+        <cre:empDoj>{data($body/exam:CreateOrUpdateEmpData/exam:empDoj)}</cre:empDoj>
+        <!--Optional:-->
+        <cre:empTotalExp>{data($body/exam:CreateOrUpdateEmpData/exam:empTotalExp)}</cre:empTotalExp>
+        <!--Optional:-->
+        <cre:empType>{data($body/exam:CreateOrUpdateEmpData/exam:empType)}</cre:empType>
+        <!--Optional:-->
+        <cre:empQualification>{data($body/exam:CreateOrUpdateEmpData/exam:empQualification)}</cre:empQualification>
+        <!--Optional:-->
+        <cre:empDesignation>{data($body/exam:CreateOrUpdateEmpData/exam:empDesignation)}</cre:empDesignation>
+        <!--Optional:-->
+        <cre:empPhMobile>{data($body/exam:CreateOrUpdateEmpData/exam:empPhMobile)}</cre:empPhMobile>
+        <!--Optional:-->
+        <cre:gender>{data($body/exam:CreateOrUpdateEmpData/exam:gender)}</cre:gender>
+        <!--Optional:-->
+        <cre:createDate>{data($body/exam:CreateOrUpdateEmpData/exam:createDate)}</cre:createDate>
+        <!--Optional:-->
+        <cre:createdBy>{data($body/exam:CreateOrUpdateEmpData/exam:createdBy)}</cre:createdBy>
+        <!--Optional:-->
+        <cre:modifiedDate>{data($body/exam:CreateOrUpdateEmpData/exam:modifiedDate)}</cre:modifiedDate>
+        <!--Optional:-->
+        <cre:modifiedBy>{data($body/exam:CreateOrUpdateEmpData/exam:modifiedBy)}</cre:modifiedBy>
+        <!--Optional:-->
+        <cre:empEmail>{data($body/exam:CreateOrUpdateEmpData/exam:empEmail)}</cre:empEmail>
+        <!--Optional:-->
+        <cre:internalRate>{data($body/exam:CreateOrUpdateEmpData/exam:internalRate)}</cre:internalRate>
+        <!--Optional:-->
+        <cre:onshoreOffshore>{data($body/exam:CreateOrUpdateEmpData/exam:onshoreOffshore)}</cre:onshoreOffshore>
+        <!--Optional:-->
+        <cre:terminationDate>{data($body/exam:CreateOrUpdateEmpData/exam:terminationDate)}</cre:terminationDate>
+        <!--Optional:-->
+        <cre:targetHrsWeek>{data($body/exam:CreateOrUpdateEmpData/exam:targetHrsWeek)}</cre:targetHrsWeek>
+        <!--Optional:-->
+        <cre:hrStatus>{data($body/exam:CreateOrUpdateEmpData/exam:hrStatus)}</cre:hrStatus>
+        <!--Optional:-->
+        <cre:legalEntity>{data($body/exam:CreateOrUpdateEmpData/exam:legalEntity)}</cre:legalEntity>
+        <!--Optional:-->
+        <cre:empDob>{data($body/exam:CreateOrUpdateEmpData/exam:empDob)}</cre:empDob>
+        <!--Optional:-->
+        <cre:empPan>{data($body/exam:CreateOrUpdateEmpData/exam:empPan)}</cre:empPan>
+        <!--Optional:-->
+        <cre:maritalStatus>{data($body/exam:CreateOrUpdateEmpData/exam:maritalStatus)}</cre:maritalStatus>
+        <!--Optional:-->
+        <cre:massLoadStatus>{data($body/exam:CreateOrUpdateEmpData/exam:massLoadStatus)}</cre:massLoadStatus>
+        <!--Optional:-->
+        <cre:remunerateStatus>{data($body/exam:CreateOrUpdateEmpData/exam:remunerateStatus)}</cre:remunerateStatus>
+        <!--Optional:-->
+        <cre:locationCountry>{data($body/exam:CreateOrUpdateEmpData/exam:locationCountry)}</cre:locationCountry>
+        <!--Optional:-->
+        <cre:indEmpFlag>{data($body/exam:CreateOrUpdateEmpData/exam:indEmpFlag)}</cre:indEmpFlag>
+        <!--Optional:-->
+        <cre:payrollStatus>{data($body/exam:CreateOrUpdateEmpData/exam:payrollStatus)}</cre:payrollStatus>
+        <!--Optional:-->
+        <cre:regRegion>{data($body/exam:CreateOrUpdateEmpData/exam:regRegion)}</cre:regRegion>
+        <!--Optional:-->
+        <cre:businessUnit>{data($body/exam:CreateOrUpdateEmpData/exam:businessUnit)}</cre:businessUnit>
+        <!--Optional:-->
+        <cre:deptid>{data($body/exam:CreateOrUpdateEmpData/exam:deptid)}</cre:deptid>
+        <!--Optional:-->
+        <cre:empPhBusiness>{data($body/exam:CreateOrUpdateEmpData/exam:empPhBusiness)}</cre:empPhBusiness>
+        <!--Optional:-->
+        <cre:empPhOfficial>{data($body/exam:CreateOrUpdateEmpData/exam:empPhOfficial)}</cre:empPhOfficial>
+        <!--Optional:-->
+        <cre:loadTs></cre:loadTs>
+        <!--Optional:-->
+        <cre:updTs></cre:updTs>
+    </cre:EmpData>
+</cre:EmpDataCollection>]]></con2:xqueryText>
+                                        </con1:expr>
+                                    </con1:replace>
+                                </con3:outboundTransform>
+                            </con3:route>
+                        </con1:default>
+                    </con1:ifThenElse>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c95">
+            <con:stage id="_StageId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c93" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="PipelinePairNode1">
+                <con:request>request-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c96</con:request>
+                <con:response>response-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c95</con:response>
+            </con:pipeline-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

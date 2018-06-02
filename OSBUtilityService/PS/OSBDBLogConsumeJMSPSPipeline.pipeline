@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config">
+    <con:coreEntry>
+        <con:binding type="Mixed" xsi:type="con:MixedBindingType">
+            <con:request type="XML">
+                <con1:schema ref="OSBUtilityService/Resources/OSBDBLogServiceLPS" element="Osbservicedblogs"/>
+            </con:request>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:route-node name="OSBDBLogJMSConsumeRouteNode" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                <con:context/>
+                <con:actions>
+                    <con1:route>
+                        <con2:id>_ActionId-N3f5723ff.N5ed4a73.0.15ddcbe69e2.N7de5</con2:id>
+                        <con1:service ref="OSBUtilityService/BS/OSBDBLogServiceBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:operation>insert</con1:operation>
+                        <con1:outboundTransform>
+                            <con4:replace varName="body" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con4="http://www.bea.com/wli/sb/stages/transform/config">
+                                <con2:id>_ActionId-N3f5723ff.N5ed4a73.0.15ddcbe69e2.N7db2</con2:id>
+                                <con4:location>
+                                    <con2:xpathText>.</con2:xpathText>
+                                </con4:location>
+                                <con4:expr>
+                                    <con2:xqueryTransform>
+                                        <con2:resource ref="OSBUtilityService/Resources/OSBDBLogService"/>
+                                        <con2:param name="osbdbin">
+                                            <con2:path>$body/*</con2:path>
+                                        </con2:param>
+                                    </con2:xqueryTransform>
+                                </con4:expr>
+                            </con4:replace>
+                        </con1:outboundTransform>
+                        <con1:responseTransform/>
+                    </con1:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>
