@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:composite xmlns:ns="http://xmlns.oracle.com/sca/1.0">
+    <ns:reference>
+        <ns:interface src="ProxyService:HRMSIntegrationProject/PS/CreateOrUpdateEmpDataLPS"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:HRMSIntegrationProject/BS/CreateOrUpdateEmpData"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:HRMSIntegrationProject/BS/CreateOrUpdateStuAdminMasterBS"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="ProxyService:HRMSIntegrationProject/PS/CreateOrUpdateStuMasterLPS"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:OSBUtilityService/BS/TechnicalErrorQueue/OracleSchoolDBErrorJMSBS"/>
+    </ns:reference>
+</ns:composite>

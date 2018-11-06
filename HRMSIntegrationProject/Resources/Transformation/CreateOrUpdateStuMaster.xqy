@@ -34,6 +34,11 @@ declare function local:func($StuMst as element() (:: schema-element(ns1:CreateOr
                 else ()
             }
             {
+                if ($StuMst/ns1:studentaadhaarno)
+                then <ns2:studentaadhaarno>{fn:data($StuMst/ns1:studentaadhaarno)}</ns2:studentaadhaarno>
+                else ()
+            }
+            {
                 if ($StuMst/ns1:studentcellno)
                 then <ns2:studentcellno>{fn:data($StuMst/ns1:studentcellno)}</ns2:studentcellno>
                 else ()
@@ -46,6 +51,11 @@ declare function local:func($StuMst as element() (:: schema-element(ns1:CreateOr
             {
                 if ($StuMst/ns1:studentphoto)
                 then <ns2:studentphoto>{fn:data($StuMst/ns1:studentphoto)}</ns2:studentphoto>
+                else ()
+            }
+            {
+                if ($StuMst/ns1:studentjoiningacademicyear)
+                then <ns2:studentjoiningacademicyear>{fn:data($StuMst/ns1:studentjoiningacademicyear)}</ns2:studentjoiningacademicyear>
                 else ()
             }
             {

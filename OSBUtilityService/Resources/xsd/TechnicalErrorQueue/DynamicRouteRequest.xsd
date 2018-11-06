@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:ctx="http://www.bea.com/wli/sb/context"
+            xmlns="http://xmlns.oracle.com/schemas/commmon"
+            targetNamespace="http://www.bea.com/wli/sb/context">
+	<xsd:element name="route" type="ctx:routeType"/>
+	<xsd:complexType name="routeType">
+		<xsd:sequence>
+			<xsd:element name="service" type="ctx:ServiceType"/>					
+			<xsd:element name="operation" type="xsd:string"
+					minOccurs="0" nillable="false" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ServiceType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="isProxy" type="xsd:boolean"/>
+
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+</xsd:schema>

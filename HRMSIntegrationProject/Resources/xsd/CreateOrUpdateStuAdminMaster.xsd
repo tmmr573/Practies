@@ -7,14 +7,16 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="studentid" type="xsd:string"/>
+        <xsd:element name="studentid" type="xsd:long"/>
          <xsd:element name="studentname" type="xsd:string" minOccurs="0"/>
          <xsd:element name="studentjoiningclass" type="xsd:string" minOccurs="0"/>
          <xsd:element name="studentadmissiondate" type="xsd:dateTime" minOccurs="0"/>
          <xsd:element name="studentadmisionno" type="xsd:long" minOccurs="0" nillable="true"/>
+         <xsd:element name="studentaadhaarno" type="xsd:long" minOccurs="0" nillable="true"/>
          <xsd:element name="studentcellno" type="xsd:long" minOccurs="0" nillable="true"/>
          <xsd:element name="studentstatus" type="xsd:string" minOccurs="0"/>
          <xsd:element name="studentphoto" type="xsd:base64Binary" minOccurs="0" nillable="true"/>
+         <xsd:element name="studentjoiningacademicyear" type="xsd:string" minOccurs="0" nillable="true"/>
          <xsd:element name="teacherid" type="xsd:string" minOccurs="0" nillable="true"/>
          <xsd:element name="readflag" type="xsd:string" minOccurs="0" nillable="true"/>
       </xsd:sequence>

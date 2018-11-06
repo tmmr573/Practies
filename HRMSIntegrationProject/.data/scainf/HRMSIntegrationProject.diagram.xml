@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="CreateOrUpdateEmpDataLPS">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="374" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="367" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="CreateOrUpdateEmpDataLPS" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_local_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="CreateOrUpdateHRMSDataPS">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="243" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="236" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="CreateOrUpdateHRMSDataPS" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="CreateOrUpdateStuMasterLPS">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="69" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="62" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="CreateOrUpdateStuMasterLPS" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_local_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gReference name="CreateOrUpdateEmpData">
+        <dgm:body borderWidth="2" arcRad="20" X="671" Y="374" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="661" Y="367" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="CreateOrUpdateEmpData" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="CreateOrUpdateEmpDataLPS2">
+        <dgm:body borderWidth="2" arcRad="20" X="671" Y="200" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="661" Y="193" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="CreateOrUpdateEmpDataLPS2" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_local_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="CreateOrUpdateStuMasterLPS2">
+        <dgm:body borderWidth="2" arcRad="20" X="671" Y="288" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="661" Y="281" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="CreateOrUpdateStuMasterLPS2" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_local_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="OracleSchoolDBErrorJMSBS">
+        <dgm:body borderWidth="2" arcRad="20" X="671" Y="26" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="661" Y="19" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="OracleSchoolDBErrorJMSBS" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_jms_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="CreateOrUpdateStuAdminMasterBS">
+        <dgm:body borderWidth="2" arcRad="20" X="671" Y="114" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="661" Y="107" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="CreateOrUpdateStuAdminMasterBS" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gComponent name="CreateOrUpdateEmpDataLPSPipeline">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="359" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="352" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.598038955.CreateOrUpdateEmpData" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="CreateOrUpdateHRMSDataPSPipeline">
+        <dgm:body borderWidth="2" arcRad="20" X="473" Y="228" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="463" Y="221" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="proxyservice.598039389.CreateOrUpdateEmpDataLPS" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="proxyservice.598039389.CreateOrUpdateStuMasterLPS" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="CreateOrUpdateStuMasterLPSPipeline">
+        <dgm:body borderWidth="2" arcRad="20" X="473" Y="54" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="463" Y="47" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-673355472.OracleSchoolDBErrorJMSBS" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.598038955.CreateOrUpdateStuAdminMasterBS" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="CreateOrUpdateEmpDataLPS" target="CreateOrUpdateEmpDataLPSPipeline/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="384" X2="264" Y2="384"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="CreateOrUpdateHRMSDataPS" target="CreateOrUpdateHRMSDataPSPipeline/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="253" X2="463" Y2="253"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="CreateOrUpdateStuMasterLPS" target="CreateOrUpdateStuMasterLPSPipeline/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="79" X2="463" Y2="79"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="CreateOrUpdateEmpDataLPSPipeline/businessservice.598038955.CreateOrUpdateEmpData" target="CreateOrUpdateEmpData" width="2">
+        <dgm:gSegment X1="414" Y1="384" X2="661" Y2="384"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="CreateOrUpdateHRMSDataPSPipeline/proxyservice.598039389.CreateOrUpdateEmpDataLPS" target="CreateOrUpdateEmpDataLPS2" width="2">
+        <dgm:gSegment X1="613" Y1="253" X2="637" Y2="253"/>
+        <dgm:gSegment X1="637" Y1="253" X2="637" Y2="210"/>
+        <dgm:gSegment X1="637" Y1="210" X2="661" Y2="210"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="CreateOrUpdateHRMSDataPSPipeline/proxyservice.598039389.CreateOrUpdateStuMasterLPS" target="CreateOrUpdateStuMasterLPS2" width="2">
+        <dgm:gSegment X1="613" Y1="278" X2="637" Y2="278"/>
+        <dgm:gSegment X1="637" Y1="278" X2="637" Y2="298"/>
+        <dgm:gSegment X1="637" Y1="298" X2="661" Y2="298"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="CreateOrUpdateStuMasterLPSPipeline/businessservice.-673355472.OracleSchoolDBErrorJMSBS" target="OracleSchoolDBErrorJMSBS" width="2">
+        <dgm:gSegment X1="613" Y1="79" X2="637" Y2="79"/>
+        <dgm:gSegment X1="637" Y1="79" X2="637" Y2="36"/>
+        <dgm:gSegment X1="637" Y1="36" X2="661" Y2="36"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="CreateOrUpdateStuMasterLPSPipeline/businessservice.598038955.CreateOrUpdateStuAdminMasterBS" target="CreateOrUpdateStuAdminMasterBS" width="2">
+        <dgm:gSegment X1="613" Y1="104" X2="637" Y2="104"/>
+        <dgm:gSegment X1="637" Y1="104" X2="637" Y2="124"/>
+        <dgm:gSegment X1="637" Y1="124" X2="661" Y2="124"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>

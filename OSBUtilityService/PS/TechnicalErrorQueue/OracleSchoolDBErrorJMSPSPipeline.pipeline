@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config" xmlns:con2="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/transform/config">
+    <con:coreEntry>
+        <con:binding type="Mixed" xsi:type="con:MixedBindingType">
+            <con:request type="XML">
+                <con1:schema ref="OSBUtilityService/Resources/xsd/TechnicalErrorQueue/Errored-JmsRequestMessage" element="errorRequest"/>
+            </con:request>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:route-node name="RouteNodeToDynamicRouteLPS">
+                <con:context/>
+                <con:actions>
+                    <con2:route>
+                        <con3:id>_ActionId-N3f5776ff.N3fd1b0af.0.166ddc5d5a5.N7ffd</con3:id>
+                        <con2:service ref="OSBUtilityService/PS/TechnicalErrorQueue/ErrorProcessingDynamicRouteLPS" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con2:outboundTransform>
+                            <con4:routing-options>
+                                <con3:id>_ActionId-N3f5776ff.N3fd1b0af.0.166ddc5d5a5.N7fcb</con3:id>
+                                <con4:qualityOfService>exactly-once</con4:qualityOfService>
+                            </con4:routing-options>
+                        </con2:outboundTransform>
+                        <con2:responseTransform/>
+                    </con2:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

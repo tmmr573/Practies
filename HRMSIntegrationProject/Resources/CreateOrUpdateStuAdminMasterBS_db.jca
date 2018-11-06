@@ -1,6 +1,6 @@
 <adapter-config name="CreateOrUpdateStuAdminMasterBS" adapter="db" wsdlLocation="CreateOrUpdateStuAdminMasterBS.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory UIConnectionName="SchoolCon" location="eis/DB/SchoolDS"/>
+  <connection-factory UIConnectionName="SchoolDBCon" location="eis/DB/SchoolDS"/>
   <endpoint-interaction portType="CreateOrUpdateStuAdminMasterBS_ptt" operation="merge">
     <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
       <property name="DescriptorName" value="CreateOrUpdateStuAdminMasterBS.StudentsAdmissionMaster"/>
@@ -9,6 +9,38 @@
       <property name="GetActiveUnitOfWork" value="false"/>
       <property name="OptimizeMerge" value="true"/>
       <property name="DetectOmissions" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="CreateOrUpdateStuAdminMasterBS_ptt" operation="insert">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="CreateOrUpdateStuAdminMasterBS.StudentsAdmissionMaster"/>
+      <property name="DmlType" value="insert"/>
+      <property name="MappingsMetaDataURL" value="CreateOrUpdateStuAdminMasterBS-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="CreateOrUpdateStuAdminMasterBS_ptt" operation="update">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="CreateOrUpdateStuAdminMasterBS.StudentsAdmissionMaster"/>
+      <property name="DmlType" value="update"/>
+      <property name="MappingsMetaDataURL" value="CreateOrUpdateStuAdminMasterBS-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="CreateOrUpdateStuAdminMasterBS_ptt" operation="CreateOrUpdateStuAdminMasterBSSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="CreateOrUpdateStuAdminMasterBS.StudentsAdmissionMaster"/>
+      <property name="QueryName" value="CreateOrUpdateStuAdminMasterBSSelect"/>
+      <property name="MappingsMetaDataURL" value="CreateOrUpdateStuAdminMasterBS-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
     </interaction-spec>
   </endpoint-interaction>
 

@@ -12,6 +12,19 @@
          <querying>
             <queries>
                <query name="CreateOrUpdateStuAdminMasterBSSelect" xsi:type="read-all-query">
+                  <criteria operator="equal" xsi:type="relation-expression">
+                     <left name="studentid" xsi:type="query-key-expression">
+                        <base xsi:type="base-expression"/>
+                     </left>
+                     <right xsi:type="parameter-expression">
+                        <parameter name="StuID" xsi:type="column"/>
+                     </right>
+                  </criteria>
+                  <arguments>
+                     <argument name="StuID">
+                        <type>java.lang.String</type>
+                     </argument>
+                  </arguments>
                   <reference-class>CreateOrUpdateStuAdminMasterBS.StudentsAdmissionMaster</reference-class>
                   <container xsi:type="list-container-policy">
                      <collection-type>java.util.Vector</collection-type>
@@ -23,7 +36,7 @@
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>studentid</attribute-name>
                <field table="STUDENTS_ADMISSION_MASTER" name="STUDENTID" xsi:type="column"/>
-               <attribute-classification>java.lang.String</attribute-classification>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>studentname</attribute-name>
@@ -43,12 +56,17 @@
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>studentadmisionno</attribute-name>
                <field table="STUDENTS_ADMISSION_MASTER" name="STUDENTADMISIONNO" xsi:type="column"/>
-               <attribute-classification>java.lang.Long</attribute-classification>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>studentaadhaarno</attribute-name>
+               <field table="STUDENTS_ADMISSION_MASTER" name="STUDENTAADHAARNO" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>studentcellno</attribute-name>
                <field table="STUDENTS_ADMISSION_MASTER" name="STUDENTCELLNO" xsi:type="column"/>
-               <attribute-classification>java.lang.Long</attribute-classification>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>studentstatus</attribute-name>
@@ -59,6 +77,11 @@
                <attribute-name>studentphoto</attribute-name>
                <field table="STUDENTS_ADMISSION_MASTER" name="STUDENTPHOTO" xsi:type="column"/>
                <attribute-classification>[B</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>studentjoiningacademicyear</attribute-name>
+               <field table="STUDENTS_ADMISSION_MASTER" name="STUDENTJOININGACADEMICYEAR" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>teacherid</attribute-name>

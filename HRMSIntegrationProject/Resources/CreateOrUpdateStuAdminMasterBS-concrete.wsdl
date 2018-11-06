@@ -8,5 +8,26 @@
                 <soap:body use="literal"/>
             </wsdl:input>
         </wsdl:operation>
+        <wsdl:operation name="insert">
+            <soap:operation soapAction="insert"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <soap:operation soapAction="update"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="CreateOrUpdateStuAdminMasterBSSelect">
+            <soap:operation soapAction="CreateOrUpdateStuAdminMasterBSSelect"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
     </wsdl:binding>
 </wsdl:definitions>

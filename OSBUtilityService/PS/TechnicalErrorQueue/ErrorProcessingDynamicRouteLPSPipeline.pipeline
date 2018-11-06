@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+    <con:coreEntry>
+        <con:binding type="Any XML"/>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:route-node name="DynamicRouteNode">
+                <con:context>
+                    <con1:userNsDecl prefix="err" namespace="http://xmlns.oracle.com/schemas/common/errorRequest"/>
+                </con:context>
+                <con:actions>
+                    <con2:dynamic-route>
+                        <con1:id>_ActionId-N3f5776ff.N3fd1b0af.0.166ddc5d5a5.N7fc7</con1:id>
+                        <con2:service>
+                            <con1:xqueryTransform>
+                                <con1:resource ref="OSBUtilityService/Resources/Transformation/TechnicalErrorQueue/XFormJmsMessageToDynamicRouteRequest"/>
+                                <con1:param name="JMSReq">
+                                    <con1:path>$body/*:errorRequest</con1:path>
+                                </con1:param>
+                            </con1:xqueryTransform>
+                        </con2:service>
+                        <con2:outboundTransform>
+                            <con3:routing-options>
+                                <con1:id>_ActionId-N3f5776ff.N3fd1b0af.0.166ddc5d5a5.N7f93</con1:id>
+                                <con3:qualityOfService>exactly-once</con3:qualityOfService>
+                            </con3:routing-options>
+                            <con3:replace contents-only="true" varName="body">
+                                <con1:id>_ActionId-N3f5776ff.N3fd1b0af.0.166ddc5d5a5.N7f90</con1:id>
+                                <con3:location>
+                                    <con1:xpathText>.</con1:xpathText>
+                                </con3:location>
+                                <con3:expr>
+                                    <con1:xqueryText>fn-bea:inlinedXML($body/err:errorRequest/err:request_message)</con1:xqueryText>
+                                </con3:expr>
+                            </con3:replace>
+                            <con3:ifThenElse>
+                                <con1:id>_ActionId-N3f5776ff.N38fd8dfb.0.166de442855.N7f85</con1:id>
+                                <con3:case id="_BranchId-N3f5776ff.N38fd8dfb.0.166de442855.N7f84">
+                                    <con3:condition>
+                                        <con1:xqueryText>fn:exists($body/*/JMSMessageFlag)</con1:xqueryText>
+                                    </con3:condition>
+                                    <con3:actions></con3:actions>
+                                </con3:case>
+                                <con3:default>
+                                    <con3:insert varName="body">
+                                        <con1:id>_ActionId-N3f5776ff.N38fd8dfb.0.166de442855.N7f81</con1:id>
+                                        <con3:location>
+                                            <con1:xpathText>./*</con1:xpathText>
+                                        </con3:location>
+                                        <con3:where>first-child</con3:where>
+                                        <con3:expr>
+                                            <con1:xqueryText>&lt;JMSMessageFlag>TRUE&lt;/JMSMessageFlag></con1:xqueryText>
+                                        </con3:expr>
+                                    </con3:insert>
+                                    <con4:log>
+                                        <con1:id>_ActionId-N3f5776ff.N38fd8dfb.0.166de442855.N7e55</con1:id>
+                                        <con4:logLevel>error</con4:logLevel>
+                                        <con4:expr>
+                                            <con1:xqueryText>$body</con1:xqueryText>
+                                        </con4:expr>
+                                        <con4:message>DynamicError</con4:message>
+                                    </con4:log>
+                                </con3:default>
+                            </con3:ifThenElse>
+                        </con2:outboundTransform>
+                        <con2:responseTransform/>
+                    </con2:dynamic-route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>
