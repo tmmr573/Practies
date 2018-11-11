@@ -1,6 +1,6 @@
-<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/osb/HRMSIntegrationProject/CreateOrUpdateStuAdminMasterBS" name="CreateOrUpdateStuAdminMasterBS-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
-    <wsdl:import location="CreateOrUpdateStuAdminMasterBS.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/osb/HRMSIntegrationProject/CreateOrUpdateStuAdminMasterBS"/>
-    <wsdl:binding name="CreateOrUpdateStuAdminMasterBS_ptt-binding" type="cre:CreateOrUpdateStuAdminMasterBS_ptt" xmlns:cre="http://xmlns.oracle.com/pcbpel/adapter/db/osb/HRMSIntegrationProject/CreateOrUpdateStuAdminMasterBS">
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ServiceBusApplicationgit/HRMSIntegrationProject/CreateOrUpdateStAdminMasterBS" name="CreateOrUpdateStAdminMasterBS-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="CreateOrUpdateStAdminMasterBS.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ServiceBusApplicationgit/HRMSIntegrationProject/CreateOrUpdateStAdminMasterBS"/>
+    <wsdl:binding name="CreateOrUpdateStAdminMasterBS_ptt-binding" type="cre:CreateOrUpdateStAdminMasterBS_ptt" xmlns:cre="http://xmlns.oracle.com/pcbpel/adapter/db/ServiceBusApplicationgit/HRMSIntegrationProject/CreateOrUpdateStAdminMasterBS">
         <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
         <wsdl:operation name="merge">
             <soap:operation soapAction="merge"/>
@@ -20,8 +20,8 @@
                 <soap:body use="literal"/>
             </wsdl:input>
         </wsdl:operation>
-        <wsdl:operation name="CreateOrUpdateStuAdminMasterBSSelect">
-            <soap:operation soapAction="CreateOrUpdateStuAdminMasterBSSelect"/>
+        <wsdl:operation name="CreateOrUpdateStAdminMasterBSSelect">
+            <soap:operation soapAction="CreateOrUpdateStAdminMasterBSSelect"/>
             <wsdl:input>
                 <soap:body use="literal"/>
             </wsdl:input>

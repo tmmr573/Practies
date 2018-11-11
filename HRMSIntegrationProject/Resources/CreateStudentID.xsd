@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/CreateStudentID" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/CreateStudentID" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="CreateStudentIDInput" type="CreateStudentIDInput"/>
+   <xs:complexType name="CreateStudentIDInput">
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:element name="CreateStudentIDOutputCollection" type="CreateStudentIDOutputCollection"/>
+   <xs:complexType name="CreateStudentIDOutputCollection">
+      <xs:sequence>
+         <xs:element name="CreateStudentIDOutput" type="CreateStudentIDOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="CreateStudentIDOutput">
+      <xs:sequence>
+         <xs:element name="STUDENTID" type="xs:decimal" nillable="true"/>
+         <xs:element name="STUDENTNAME" type="xs:string" nillable="true"/>
+         <xs:element name="STUDENTJOININGCLASS" type="xs:string" nillable="true"/>
+         <xs:element name="STUDENTADMISSIONDATE" type="xs:dateTime" nillable="true"/>
+         <xs:element name="STUDENTADMISIONNO" type="xs:decimal" nillable="true"/>
+         <xs:element name="STUDENTAADHAARNO" type="xs:decimal" nillable="true"/>
+         <xs:element name="STUDENTCELLNO" type="xs:decimal" nillable="true"/>
+         <xs:element name="STUDENTSTATUS" type="xs:string" nillable="true"/>
+         <xs:element name="STUDENTPHOTO" type="xs:base64Binary" nillable="true"/>
+         <xs:element name="STUDENTJOININGACADEMICYEAR" type="xs:string" nillable="true"/>
+         <xs:element name="TEACHERID" type="xs:string" nillable="true"/>
+         <xs:element name="READFLAG" type="xs:string" nillable="true"/>
+         <xs:element name="LOAD_TS" type="xs:dateTime" nillable="true"/>
+         <xs:element name="UPD_TS" type="xs:dateTime" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <object-persistence xmlns="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eclipselink="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd">
-   <name>CreateOrUpdateStuAdminMasterBS-OR</name>
+   <name>CreateOrUpdateStAdminMasterBS-OR</name>
    <class-mapping-descriptors>
       <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
-         <class>CreateOrUpdateStuAdminMasterBS.StudentsAdmissionMaster</class>
+         <class>CreateOrUpdateStAdminMasterBS.StudentsAdmissionMaster</class>
          <alias>STUDENTS_ADMISSION_MASTER</alias>
          <primary-key>
             <field table="STUDENTS_ADMISSION_MASTER" name="STUDENTID" xsi:type="column"/>
@@ -11,7 +11,7 @@
          <events/>
          <querying>
             <queries>
-               <query name="CreateOrUpdateStuAdminMasterBSSelect" xsi:type="read-all-query">
+               <query name="CreateOrUpdateStAdminMasterBSSelect" xsi:type="read-all-query">
                   <criteria operator="equal" xsi:type="relation-expression">
                      <left name="studentid" xsi:type="query-key-expression">
                         <base xsi:type="base-expression"/>
@@ -25,7 +25,7 @@
                         <type>java.lang.String</type>
                      </argument>
                   </arguments>
-                  <reference-class>CreateOrUpdateStuAdminMasterBS.StudentsAdmissionMaster</reference-class>
+                  <reference-class>CreateOrUpdateStAdminMasterBS.StudentsAdmissionMaster</reference-class>
                   <container xsi:type="list-container-policy">
                      <collection-type>java.util.Vector</collection-type>
                   </container>

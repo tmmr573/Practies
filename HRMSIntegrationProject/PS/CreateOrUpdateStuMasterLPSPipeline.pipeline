@@ -51,34 +51,138 @@
                 </con:actions>
             </con:stage>
         </con:pipeline>
-        <con:flow>
-            <con:route-node name="CreateOrUpdateStuMasterRouteNode">
+        <con:pipeline type="request" name="request-N3f5776ff.N20f7b46b.0.167016abe92.N7fd0">
+            <con:stage id="_StageId-N3f5776ff.N20f7b46b.0.167016abe92.N7f67" name="StudentIdCreateStage">
                 <con:context/>
                 <con:actions>
-                    <con3:route>
-                        <con2:id>_ActionId-N3f5723ff.N61dcb188.0.15ef59be9f5.N7f0f</con2:id>
-                        <con3:service ref="HRMSIntegrationProject/BS/CreateOrUpdateStuAdminMasterBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
-                        <con3:operation>merge</con3:operation>
-                        <con3:outboundTransform>
-                            <con1:replace contents-only="true" varName="body" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
-                                <con2:id>_ActionId-N3f5723ff.N61dcb188.0.15ef59be9f5.N7edc</con2:id>
-                                <con1:location>
-                                    <con2:xpathText>.</con2:xpathText>
-                                </con1:location>
-                                <con1:expr>
-                                    <con2:xqueryTransform>
-                                        <con2:resource ref="HRMSIntegrationProject/Resources/Transformation/CreateOrUpdateStuMaster"/>
-                                        <con2:param name="StuMst">
-                                            <con2:path>$body/*:CreateOrUpdateStuAdminMaster</con2:path>
-                                        </con2:param>
-                                    </con2:xqueryTransform>
-                                </con1:expr>
-                            </con1:replace>
-                        </con3:outboundTransform>
-                        <con3:responseTransform/>
-                    </con3:route>
+                    <con4:ifThenElse>
+                        <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7f66</con2:id>
+                        <con4:case id="_BranchId-N3f5776ff.N20f7b46b.0.167016abe92.N7f65">
+                            <con4:condition>
+                                <con2:xqueryText>$body/*:CreateOrUpdateStuAdminMaster/*:studentid!=''</con2:xqueryText>
+                            </con4:condition>
+                            <con4:actions>
+                                <con4:wsCallout>
+                                    <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7f9b</con2:id>
+                                    <con4:service ref="HRMSIntegrationProject/BS/CreateOrUpdateStAdminMasterBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                    <con4:operation>CreateOrUpdateStAdminMasterBSSelect</con4:operation>
+                                    <con4:request>
+                                        <con4:body wrapped="false">StuIdReq</con4:body>
+                                    </con4:request>
+                                    <con4:response>
+                                        <con4:body wrapped="false">StuIdResp</con4:body>
+                                    </con4:response>
+                                    <con4:requestTransform>
+                                        <con4:assign varName="StuIdReq">
+                                            <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7f00</con2:id>
+                                            <con4:expr>
+                                                <con2:xqueryText>&lt;cre:CreateOrUpdateStAdminMasterBSSelect_StuIDInputParameters xmlns:cre="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateStAdminMasterBS">
+    &lt;cre:StuID>{data($body/*:CreateOrUpdateStuAdminMaster/*:studentid)}&lt;/cre:StuID>
+&lt;/cre:CreateOrUpdateStAdminMasterBSSelect_StuIDInputParameters></con2:xqueryText>
+                                            </con4:expr>
+                                        </con4:assign>
+                                    </con4:requestTransform>
+                                    <con4:responseTransform/>
+                                </con4:wsCallout>
+                                <con1:route>
+                                    <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7e6c</con2:id>
+                                    <con1:service ref="HRMSIntegrationProject/BS/CreateOrUpdateStAdminMasterBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                    <con1:operation>update</con1:operation>
+                                    <con1:outboundTransform>
+                                        <con4:routing-options>
+                                            <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7e05</con2:id>
+                                            <con4:qualityOfService>exactly-once</con4:qualityOfService>
+                                        </con4:routing-options>
+                                        <con1:replace contents-only="true" varName="body" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                                            <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7e37</con2:id>
+                                            <con1:location>
+                                                <con2:xpathText>.</con2:xpathText>
+                                            </con1:location>
+                                            <con1:expr>
+                                                <con2:xqueryTransform>
+                                                    <con2:resource ref="HRMSIntegrationProject/Resources/Transformation/UpdateStuAdminMaster"/>
+                                                    <con2:param name="UpdateStuMaster">
+                                                        <con2:path>$body/*:CreateOrUpdateStuAdminMaster</con2:path>
+                                                    </con2:param>
+                                                </con2:xqueryTransform>
+                                            </con1:expr>
+                                        </con1:replace>
+                                    </con1:outboundTransform>
+                                </con1:route>
+                            </con4:actions>
+                        </con4:case>
+                        <con4:default>
+                            <con4:wsCallout>
+                                <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7f32</con2:id>
+                                <con4:service ref="HRMSIntegrationProject/BS/CreateStudentID" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                <con4:operation>CreateStudentID</con4:operation>
+                                <con4:request>
+                                    <con4:body wrapped="false">StuIdCreateReq</con4:body>
+                                </con4:request>
+                                <con4:response>
+                                    <con4:body wrapped="false">StuIdCreateResp</con4:body>
+                                </con4:response>
+                                <con4:requestTransform>
+                                    <con4:assign varName="StuIdCreateReq">
+                                        <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7ece</con2:id>
+                                        <con4:expr>
+                                            <con2:xqueryText>&lt;cre:CreateStudentIDInput xmlns:cre="http://xmlns.oracle.com/pcbpel/adapter/db/CreateStudentID"/></con2:xqueryText>
+                                        </con4:expr>
+                                    </con4:assign>
+                                </con4:requestTransform>
+                                <con4:responseTransform>
+                                    <con4:assign varName="StudentId">
+                                        <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7cda</con2:id>
+                                        <con4:expr>
+                                            <con2:xqueryText>sum(data($StuIdCreateResp/*:CreateStudentIDOutput/*:STUDENTID)+1)</con2:xqueryText>
+                                        </con4:expr>
+                                    </con4:assign>
+                                </con4:responseTransform>
+                            </con4:wsCallout>
+                            <con1:route>
+                                <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7da3</con2:id>
+                                <con1:service ref="HRMSIntegrationProject/BS/CreateOrUpdateStAdminMasterBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                <con1:operation>insert</con1:operation>
+                                <con1:outboundTransform>
+                                    <con4:routing-options>
+                                        <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7d0c</con2:id>
+                                        <con4:qualityOfService>exactly-once</con4:qualityOfService>
+                                    </con4:routing-options>
+                                    <con4:replace varName="body" contents-only="true">
+                                        <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7d3e</con2:id>
+                                        <con4:location>
+                                            <con2:xpathText>.</con2:xpathText>
+                                        </con4:location>
+                                        <con4:expr>
+                                            <con2:xqueryTransform>
+                                                <con2:resource ref="HRMSIntegrationProject/Resources/Transformation/CreateStuIDandInsertStAdminMaster"/>
+                                                <con2:param name="StuAdminMaster">
+                                                    <con2:path>$body/*:CreateOrUpdateStuAdminMaster</con2:path>
+                                                </con2:param>
+                                                <con2:param name="CreateStuId">
+                                                    <con2:path>$StudentId</con2:path>
+                                                </con2:param>
+                                            </con2:xqueryTransform>
+                                        </con4:expr>
+                                    </con4:replace>
+                                </con1:outboundTransform>
+                            </con1:route>
+                        </con4:default>
+                    </con4:ifThenElse>
                 </con:actions>
-            </con:route-node>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f5776ff.N20f7b46b.0.167016abe92.N7fcf">
+            <con:stage id="_StageId-N3f5776ff.N20f7b46b.0.167016abe92.N7fcd" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="PipelinePairNode1">
+                <con:request>request-N3f5776ff.N20f7b46b.0.167016abe92.N7fd0</con:request>
+                <con:response>response-N3f5776ff.N20f7b46b.0.167016abe92.N7fcf</con:response>
+            </con:pipeline-node>
         </con:flow>
     </con:router>
 </con:pipelineEntry>

@@ -6,7 +6,7 @@
             <con:snippetVersion>1.0</con:snippetVersion>
         </con:xqConfiguration>
     </con:coreEntry>
-    <con:router>
+    <con:router errorHandler="error-N3f5776ff.495b0593.0.166fe65b7e4.N8000">
         <con:pipeline type="request" name="request-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c96">
             <con:stage id="_StageId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c94" name="CreateOrUpdateEmpDataStage">
                 <con:context>
@@ -188,8 +188,44 @@
                 <con:actions/>
             </con:stage>
         </con:pipeline>
+        <con:pipeline type="error" name="error-N3f5776ff.495b0593.0.166fe65b7e4.N8000">
+            <con:stage id="_StageId-N3f5776ff.495b0593.0.166fe65b7e4.N7fff" name="EmpDataErrorStage">
+                <con:context/>
+                <con:actions>
+                    <con1:route xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con5="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con4="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con1="http://www.bea.com/wli/sb/stages/publish/config">
+                        <con2:id>_ActionId-N3f5776ff.495b0593.0.166fe65b7e4.N7f96</con2:id>
+                        <con1:service ref="OSBUtilityService/BS/TechnicalErrorQueue/OracleSchoolDBErrorJMSBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:outboundTransform>
+                            <con4:replace varName="body" contents-only="true" xmlns:con6="http://www.bea.com/wli/sb/stages/transform/config">
+                                <con2:id>_ActionId-N3f5776ff.495b0593.0.166fe65b7e4.N7f95</con2:id>
+                                <con4:location>
+                                    <con2:xpathText>.</con2:xpathText>
+                                </con4:location>
+                                <con4:expr>
+                                    <con2:xqueryTransform>
+                                        <con2:resource ref="OSBUtilityService/Resources/Transformation/TechnicalErrorQueue/createTechErrorJMSRequest"/>
+                                        <con2:param name="message">
+                                            <con2:path>$body</con2:path>
+                                        </con2:param>
+                                        <con2:param name="operation_name">
+                                            <con2:path>$outbound/ctx:service/ctx:operation</con2:path>
+                                        </con2:param>
+                                        <con2:param name="isProxy">
+                                            <con2:path>'true'</con2:path>
+                                        </con2:param>
+                                        <con2:param name="service_name">
+                                            <con2:path>'HRMSIntegrationProject/PS/CreateOrUpdateEmpDataLPS'</con2:path>
+                                        </con2:param>
+                                    </con2:xqueryTransform>
+                                </con4:expr>
+                            </con4:replace>
+                        </con1:outboundTransform>
+                    </con1:route>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
         <con:flow>
-            <con:pipeline-node name="PipelinePairNode1">
+            <con:pipeline-node name="EmpPipelinePairNode">
                 <con:request>request-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c96</con:request>
                 <con:response>response-N3f5723ff.N600a912f.0.15e3c2ddc94.N7c95</con:response>
             </con:pipeline-node>

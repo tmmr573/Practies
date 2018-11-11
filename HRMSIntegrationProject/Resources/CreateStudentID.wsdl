@@ -1,0 +1,32 @@
+<wsdl:definitions
+     name="CreateStudentID"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ServiceBusApplicationgit/HRMSIntegrationProject/CreateStudentID"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/ServiceBusApplicationgit/HRMSIntegrationProject/CreateStudentID"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/CreateStudentID"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="CreateStudentID_plt" >
+    <plt:role name="CreateStudentID_role" >
+      <plt:portType name="tns:CreateStudentID_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/CreateStudentID" schemaLocation="CreateStudentID.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="CreateStudentIDInput_msg">
+        <wsdl:part name="CreateStudentIDInput_msg" element="db:CreateStudentIDInput"/>
+    </wsdl:message>
+    <wsdl:message name="CreateStudentIDOutputCollection_msg">
+        <wsdl:part name="CreateStudentIDOutputCollection" element="db:CreateStudentIDOutputCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="CreateStudentID_ptt">
+        <wsdl:operation name="CreateStudentID">
+            <wsdl:input message="tns:CreateStudentIDInput_msg"/>
+            <wsdl:output message="tns:CreateStudentIDOutputCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

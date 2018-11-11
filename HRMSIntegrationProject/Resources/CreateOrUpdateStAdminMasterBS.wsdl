@@ -1,0 +1,41 @@
+<wsdl:definitions
+     name="CreateOrUpdateStAdminMasterBS"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ServiceBusApplicationgit/HRMSIntegrationProject/CreateOrUpdateStAdminMasterBS"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/ServiceBusApplicationgit/HRMSIntegrationProject/CreateOrUpdateStAdminMasterBS"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateStAdminMasterBS"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="CreateOrUpdateStAdminMasterBS_plt" >
+    <plt:role name="CreateOrUpdateStAdminMasterBS_role" >
+      <plt:portType name="tns:CreateOrUpdateStAdminMasterBS_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateStAdminMasterBS" schemaLocation="CreateOrUpdateStAdminMasterBS_table.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="CreateOrUpdateStAdminMasterBSSelect_inputParameters">
+        <wsdl:part name="CreateOrUpdateStAdminMasterBSSelect_inputParameters" element="top:CreateOrUpdateStAdminMasterBSSelect_StuIDInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="StudentsAdmissionMasterCollection_msg">
+        <wsdl:part name="StudentsAdmissionMasterCollection" element="top:StudentsAdmissionMasterCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="CreateOrUpdateStAdminMasterBS_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:StudentsAdmissionMasterCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="insert">
+            <wsdl:input message="tns:StudentsAdmissionMasterCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <wsdl:input message="tns:StudentsAdmissionMasterCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateOrUpdateStAdminMasterBSSelect">
+            <wsdl:input message="tns:CreateOrUpdateStAdminMasterBSSelect_inputParameters"/>
+            <wsdl:output message="tns:StudentsAdmissionMasterCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

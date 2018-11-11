@@ -1,0 +1,11 @@
+<adapter-config name="CreateStudentID" adapter="db" wsdlLocation="CreateStudentID.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="SchoolDBCon" location="eis/DB/SchoolDS"/>
+  <endpoint-interaction portType="CreateStudentID_ptt" operation="CreateStudentID">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select *from STUDENTS_ADMISSION_MASTER where rowid=(select max(rowid) from STUDENTS_ADMISSION_MASTER)"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateStuAdminMasterBS" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateStuAdminMasterBS" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateStAdminMasterBS" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateStAdminMasterBS" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
    <xs:element name="StudentsAdmissionMasterCollection" type="StudentsAdmissionMasterCollection"/>
    <xs:complexType name="StudentsAdmissionMasterCollection">
       <xs:sequence>
@@ -24,8 +24,8 @@
          <xs:element name="updTs" type="xs:dateTime" minOccurs="0" nillable="true"/>
       </xs:sequence>
    </xs:complexType>
-   <xs:element name="CreateOrUpdateStuAdminMasterBSSelect_StuIDInputParameters" type="CreateOrUpdateStuAdminMasterBSSelect_StuID"/>
-   <xs:complexType name="CreateOrUpdateStuAdminMasterBSSelect_StuID">
+   <xs:element name="CreateOrUpdateStAdminMasterBSSelect_StuIDInputParameters" type="CreateOrUpdateStAdminMasterBSSelect_StuID"/>
+   <xs:complexType name="CreateOrUpdateStAdminMasterBSSelect_StuID">
       <xs:sequence>
          <xs:element name="StuID" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
