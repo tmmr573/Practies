@@ -19,6 +19,7 @@
    <entry key="STUDENTS_ADMISSION_MASTER:db_column_5">STUDENTAADHAARNO</entry>
    <entry key="STUDENTS_ADMISSION_MASTER:db_column_4">STUDENTADMISIONNO</entry>
    <entry key="STUDENTS_ADMISSION_MASTER:db_column_3">STUDENTADMISSIONDATE</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTFINGERPRINT:db_column_not_null">false</entry>
    <entry key="STUDENTS_ADMISSION_MASTER:db_table_type">TABLE</entry>
    <entry key="STUDENTS_ADMISSION_MASTER:db_column_2">STUDENTJOININGCLASS</entry>
    <entry key="STUDENTS_ADMISSION_MASTER:db_column_1">STUDENTNAME</entry>
@@ -29,6 +30,7 @@
    <entry key="STUDENTS_ADMISSION_MASTER.STUDENTNAME:db_column_not_null">true</entry>
    <entry key="STUDENTS_ADMISSION_MASTER.STUDENTID:db_column_type">NUMBER</entry>
    <entry key="STUDENTS_ADMISSION_MASTER.STUDENTADMISSIONDATE:db_column_type">DATE</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER:db_column_14">STUDENTFINGERPRINT</entry>
    <entry key="STUDENTS_ADMISSION_MASTER.STUDENTSTATUS:db_column_size">10</entry>
    <entry key="STUDENTS_ADMISSION_MASTER.LOAD_TS:db_column_not_null">false</entry>
    <entry key="STUDENTS_ADMISSION_MASTER:db_column_13">UPD_TS</entry>
@@ -44,6 +46,7 @@
    <entry key="STUDENTS_ADMISSION_MASTER.STUDENTCELLNO:db_column_type">NUMBER</entry>
    <entry key="STUDENTS_ADMISSION_MASTER.STUDENTCELLNO:db_column_not_null">false</entry>
    <entry key="STUDENTS_ADMISSION_MASTER.STUDENTADMISIONNO:db_column_type">NUMBER</entry>
+   <entry key="STUDENTS_ADMISSION_MASTER.STUDENTFINGERPRINT:db_column_type">BLOB</entry>
    <entry key="STUDENTS_ADMISSION_MASTER.STUDENTID:db_column_not_null">true</entry>
    <entry key="STUDENTS_ADMISSION_MASTER.TEACHERID:db_column_not_null">false</entry>
    <entry key="STUDENTS_ADMISSION_MASTER.UPD_TS:db_column_not_null">false</entry>

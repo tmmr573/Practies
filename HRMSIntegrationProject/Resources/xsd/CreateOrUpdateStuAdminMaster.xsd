@@ -19,6 +19,7 @@
          <xsd:element name="studentjoiningacademicyear" type="xsd:string" minOccurs="0" nillable="true"/>
          <xsd:element name="teacherid" type="xsd:string" minOccurs="0" nillable="true"/>
          <xsd:element name="readflag" type="xsd:string" minOccurs="0" nillable="true"/>
+          <xsd:element name="studentfingerprint" type="xsd:base64Binary" minOccurs="0" nillable="true"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>

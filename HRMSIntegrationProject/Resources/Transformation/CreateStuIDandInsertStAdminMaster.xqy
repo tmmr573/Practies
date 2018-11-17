@@ -70,6 +70,11 @@ declare function local:func($CreateStuId as xs:long,
                 if ($StuAdminMaster/ns1:readflag)
                 then <ns2:readflag>{fn:data($StuAdminMaster/ns1:readflag)}</ns2:readflag>
                 else ()
+            }
+            {
+                if ($StuAdminMaster/ns1:studentfingerprint)
+                then <ns2:studentfingerprint>{fn:data($StuAdminMaster/ns1:studentfingerprint)}</ns2:studentfingerprint>
+                else ()
             }</ns2:StudentsAdmissionMaster>
     </ns2:StudentsAdmissionMasterCollection>
 };

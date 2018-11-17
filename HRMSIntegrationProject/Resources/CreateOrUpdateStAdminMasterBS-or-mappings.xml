@@ -12,19 +12,17 @@
          <querying>
             <queries>
                <query name="CreateOrUpdateStAdminMasterBSSelect" xsi:type="read-all-query">
-                  <criteria operator="equal" xsi:type="relation-expression">
-                     <left name="studentid" xsi:type="query-key-expression">
-                        <base xsi:type="base-expression"/>
-                     </left>
-                     <right xsi:type="parameter-expression">
-                        <parameter name="StuID" xsi:type="column"/>
-                     </right>
-                  </criteria>
                   <arguments>
-                     <argument name="StuID">
+                     <argument name="StudentID">
+                        <type>java.lang.String</type>
+                     </argument>
+                     <argument name="StuName">
                         <type>java.lang.String</type>
                      </argument>
                   </arguments>
+                  <call xsi:type="sql-call">
+                     <sql>SELECT STUDENTID, STUDENTNAME, STUDENTJOININGCLASS, STUDENTADMISSIONDATE, STUDENTADMISIONNO, STUDENTAADHAARNO, STUDENTCELLNO, STUDENTSTATUS, STUDENTPHOTO, STUDENTJOININGACADEMICYEAR, TEACHERID, READFLAG, LOAD_TS, UPD_TS, STUDENTFINGERPRINT FROM STUDENTS_ADMISSION_MASTER WHERE (STUDENTID LIKE #StudentID OR STUDENTNAME LIKE #StuName)</sql>
+                  </call>
                   <reference-class>CreateOrUpdateStAdminMasterBS.StudentsAdmissionMaster</reference-class>
                   <container xsi:type="list-container-policy">
                      <collection-type>java.util.Vector</collection-type>
@@ -102,6 +100,11 @@
                <attribute-name>updTs</attribute-name>
                <field table="STUDENTS_ADMISSION_MASTER" name="UPD_TS" xsi:type="column"/>
                <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>studentfingerprint</attribute-name>
+               <field table="STUDENTS_ADMISSION_MASTER" name="STUDENTFINGERPRINT" xsi:type="column"/>
+               <attribute-classification>[B</attribute-classification>
             </attribute-mapping>
          </attribute-mappings>
          <descriptor-type>independent</descriptor-type>

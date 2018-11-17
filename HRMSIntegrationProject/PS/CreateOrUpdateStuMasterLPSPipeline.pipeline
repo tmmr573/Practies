@@ -76,9 +76,12 @@
                                         <con4:assign varName="StuIdReq">
                                             <con2:id>_ActionId-N3f5776ff.N20f7b46b.0.167016abe92.N7f00</con2:id>
                                             <con4:expr>
-                                                <con2:xqueryText>&lt;cre:CreateOrUpdateStAdminMasterBSSelect_StuIDInputParameters xmlns:cre="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateStAdminMasterBS">
-    &lt;cre:StuID>{data($body/*:CreateOrUpdateStuAdminMaster/*:studentid)}&lt;/cre:StuID>
-&lt;/cre:CreateOrUpdateStAdminMasterBSSelect_StuIDInputParameters></con2:xqueryText>
+                                                <con2:xqueryText><![CDATA[<cre:CreateOrUpdateStAdminMasterBSSelect_StudentID_StuNameInputParameters xmlns:cre="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreateOrUpdateStAdminMasterBS">
+    <!--Optional:-->
+    <cre:StudentID>{data($body/*:CreateOrUpdateStuAdminMaster/*:studentid)}</cre:StudentID>
+    <!--Optional:-->
+    <cre:StuName></cre:StuName>
+</cre:CreateOrUpdateStAdminMasterBSSelect_StudentID_StuNameInputParameters>]]></con2:xqueryText>
                                             </con4:expr>
                                         </con4:assign>
                                     </con4:requestTransform>

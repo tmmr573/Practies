@@ -18,7 +18,7 @@
       </schema>
     </wsdl:types>
     <wsdl:message name="CreateOrUpdateStAdminMasterBSSelect_inputParameters">
-        <wsdl:part name="CreateOrUpdateStAdminMasterBSSelect_inputParameters" element="top:CreateOrUpdateStAdminMasterBSSelect_StuIDInputParameters"/>
+        <wsdl:part name="CreateOrUpdateStAdminMasterBSSelect_inputParameters" element="top:CreateOrUpdateStAdminMasterBSSelect_StudentID_StuNameInputParameters"/>
     </wsdl:message>
     <wsdl:message name="StudentsAdmissionMasterCollection_msg">
         <wsdl:part name="StudentsAdmissionMasterCollection" element="top:StudentsAdmissionMasterCollection"/>

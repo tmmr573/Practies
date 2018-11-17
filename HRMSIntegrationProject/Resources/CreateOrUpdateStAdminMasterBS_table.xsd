@@ -22,12 +22,14 @@
          <xs:element name="readflag" type="string1" minOccurs="0" nillable="true"/>
          <xs:element name="loadTs" type="xs:dateTime" minOccurs="0" nillable="true"/>
          <xs:element name="updTs" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="studentfingerprint" type="xs:base64Binary" minOccurs="0" nillable="true"/>
       </xs:sequence>
    </xs:complexType>
-   <xs:element name="CreateOrUpdateStAdminMasterBSSelect_StuIDInputParameters" type="CreateOrUpdateStAdminMasterBSSelect_StuID"/>
-   <xs:complexType name="CreateOrUpdateStAdminMasterBSSelect_StuID">
+   <xs:element name="CreateOrUpdateStAdminMasterBSSelect_StudentID_StuNameInputParameters" type="CreateOrUpdateStAdminMasterBSSelect_StudentID_StuName"/>
+   <xs:complexType name="CreateOrUpdateStAdminMasterBSSelect_StudentID_StuName">
       <xs:sequence>
-         <xs:element name="StuID" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="StudentID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="StuName" type="xs:string" minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
    <xs:simpleType name="string200">
