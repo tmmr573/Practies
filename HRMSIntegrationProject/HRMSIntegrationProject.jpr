@@ -84,6 +84,13 @@
    </hash>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
+         <list n="constituent-sets">
+            <hash>
+               <list n="url-path">
+                  <url path=".data/"/>
+               </list>
+            </hash>
+         </list>
          <list n="pattern-filters"/>
          <list n="url-path">
             <url path=".data/contentsets/"/>
