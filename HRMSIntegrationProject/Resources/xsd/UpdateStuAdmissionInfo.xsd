@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org" elementFormDefault="qualified">
+  <xsd:element name="StudentsAdmissionInfo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="studentid" type="xsd:string"/>
+        <xsd:element name="studentadmisionno" type="xsd:integer"/>
+        <xsd:element name="sAdmissionDate" type="xsd:dateTime"/>
+        <xsd:element name="sAadharNo" type="xsd:integer"/>
+        <xsd:element name="sSuarName" type="xsd:string"/>
+        <xsd:element name="sFullName" type="xsd:string"/>
+        <xsd:element name="sDob" type="xsd:dateTime"/>
+        <xsd:element name="sStudingClass" type="xsd:string"/>
+        <xsd:element name="sPreviousStudingClass" type="xsd:string"/>
+        <xsd:element name="sMedium" type="xsd:string"/>
+        <xsd:element name="sTcNo" type="xsd:integer"/>
+        <xsd:element name="studentstatus" type="xsd:string"/>
+        <xsd:element name="sFSuarName" type="xsd:string"/>
+        <xsd:element name="sFFullName" type="xsd:string"/>
+        <xsd:element name="sMSuarName" type="xsd:string"/>
+        <xsd:element name="sMFullName" type="xsd:string"/>
+        <xsd:element name="sAddress" type="xsd:string"/>
+        <xsd:element name="sPhoneNo" type="xsd:integer"/>
+        <xsd:element name="sPhoto" type="xsd:base64Binary"/>
+        <xsd:element name="sGender" type="xsd:string"/>
+        <xsd:element name="sCaste" type="xsd:string"/>
+        <xsd:element name="sReligion" type="xsd:string"/>
+        <xsd:element name="schoolCode" type="xsd:integer"/>
+        <xsd:element name="teacherid" type="xsd:string"/>
+        <xsd:element name="studentFingerprint" type="xsd:base64Binary"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

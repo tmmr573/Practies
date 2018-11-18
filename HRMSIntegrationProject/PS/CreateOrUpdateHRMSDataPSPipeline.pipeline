@@ -85,6 +85,42 @@
                 <con:actions/>
             </con:stage>
         </con:pipeline>
+        <con:pipeline type="request" name="request-N3f5776ff.N147cb8d0.0.167265f8a10.N7eba">
+            <con:stage id="_StageId-N3f5776ff.N147cb8d0.0.167265f8a10.N7eb8" name="EnrichBody">
+                <con:context/>
+                <con:actions>
+                    <con1:assign varName="StuAdmissionInforReq">
+                        <con2:id>_ActionId-N3f5776ff.N147cb8d0.0.167265f8a10.N7e84</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f5776ff.N147cb8d0.0.167265f8a10.N7e20" name="StuAdmissionInfoLPSCallStage">
+                <con:context/>
+                <con:actions>
+                    <con1:wsCallout>
+                        <con2:id>_ActionId-N3f5776ff.N147cb8d0.0.167265f8a10.N7e1f</con2:id>
+                        <con1:service ref="HRMSIntegrationProject/PS/UpdateStuAdmissionInfoLPS" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:request>
+                            <con1:payload wrapped="false">StuAdmissionInforReq</con1:payload>
+                        </con1:request>
+                        <con1:response>
+                            <con1:payload wrapped="false">StuAdmissionInforResp</con1:payload>
+                        </con1:response>
+                        <con1:requestTransform/>
+                        <con1:responseTransform/>
+                    </con1:wsCallout>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f5776ff.N147cb8d0.0.167265f8a10.N7eb9">
+            <con:stage id="_StageId-N3f5776ff.N147cb8d0.0.167265f8a10.N7eb7" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
         <con:flow>
             <con:branch-node type="operation" id="_FlowId-N3f5723ff.N600a912f.0.15e3c2ddc94.N7ece" name="HRMSOutboundOprBranch">
                 <con:context/>
@@ -96,6 +132,16 @@
                             <con:pipeline-node name="StuMasterPipelinePairNode">
                                 <con:request>request-N3f5723ff.7ccbb01.0.15e97a9474b.N7f9e</con:request>
                                 <con:response>response-N3f5723ff.7ccbb01.0.15e97a9474b.N7f9d</con:response>
+                            </con:pipeline-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="StudentsAdmissionInfo">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePairNode1">
+                                <con:request>request-N3f5776ff.N147cb8d0.0.167265f8a10.N7eba</con:request>
+                                <con:response>response-N3f5776ff.N147cb8d0.0.167265f8a10.N7eb9</con:response>
                             </con:pipeline-node>
                         </con:flow>
                     </con:branch>

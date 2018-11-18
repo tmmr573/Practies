@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-persistence xmlns="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eclipselink="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd">
+   <name>SelectOrUpdateStudentAdmissionInfoBS-OR</name>
+   <class-mapping-descriptors>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>SelectOrUpdateStudentAdmissionInfoBS.StudentsAdmissionInfo</class>
+         <alias>STUDENTS_ADMISSION_INFO</alias>
+         <primary-key>
+            <field table="STUDENTS_ADMISSION_INFO" name="STUDENTID" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying>
+            <queries>
+               <query name="SelectOrUpdateStudentAdmissionInfoBSSelect" xsi:type="read-all-query">
+                  <arguments>
+                     <argument name="StuId">
+                        <type>java.lang.String</type>
+                     </argument>
+                     <argument name="StuName">
+                        <type>java.lang.String</type>
+                     </argument>
+                  </arguments>
+                  <call xsi:type="sql-call">
+                     <sql>SELECT STUDENTID, STUDENTADMISIONNO, S_ADMISSION_DATE, S_AADHAR_NO, S_SUAR_NAME, S_FULL_NAME, S_DOB, S_STUDING_CLASS, S_PREVIOUS_STUDING_CLASS, S_MEDIUM, S_TC_NO, STUDENTSTATUS, S_F_SUAR_NAME, S_F_FULL_NAME, S_M_SUAR_NAME, S_M_FULL_NAME, S_ADDRESS, S_PHONE_NO, S_PHOTO, S_GENDER, S_CASTE, S_RELIGION, SCHOOL_CODE, TEACHERID, STUDENT_FINGERPRINT, LOAD_TS, UPD_TS FROM STUDENTS_ADMISSION_INFO WHERE STUDENTID LIKE #StuId OR S_FULL_NAME LIKE #StuName</sql>
+                  </call>
+                  <reference-class>SelectOrUpdateStudentAdmissionInfoBS.StudentsAdmissionInfo</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>java.util.Vector</collection-type>
+                  </container>
+               </query>
+            </queries>
+         </querying>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>studentid</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="STUDENTID" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>studentadmisionno</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="STUDENTADMISIONNO" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sAdmissionDate</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_ADMISSION_DATE" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sAadharNo</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_AADHAR_NO" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sSuarName</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_SUAR_NAME" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sFullName</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_FULL_NAME" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sDob</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_DOB" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sStudingClass</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_STUDING_CLASS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sPreviousStudingClass</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_PREVIOUS_STUDING_CLASS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sMedium</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_MEDIUM" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sTcNo</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_TC_NO" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>studentstatus</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="STUDENTSTATUS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sFSuarName</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_F_SUAR_NAME" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sFFullName</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_F_FULL_NAME" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sMSuarName</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_M_SUAR_NAME" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sMFullName</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_M_FULL_NAME" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sAddress</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_ADDRESS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sPhoneNo</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_PHONE_NO" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sPhoto</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_PHOTO" xsi:type="column"/>
+               <attribute-classification>[B</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sGender</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_GENDER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sCaste</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_CASTE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>sReligion</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="S_RELIGION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>schoolCode</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="SCHOOL_CODE" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>teacherid</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="TEACHERID" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>studentFingerprint</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="STUDENT_FINGERPRINT" xsi:type="column"/>
+               <attribute-classification>[B</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>loadTs</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="LOAD_TS" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>updTs</attribute-name>
+               <field table="STUDENTS_ADMISSION_INFO" name="UPD_TS" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="STUDENTS_ADMISSION_INFO"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+   </class-mapping-descriptors>
+   <login xsi:type="database-login">
+      <platform-class>org.eclipse.persistence.platform.database.oracle.Oracle9Platform</platform-class>
+      <connection-url></connection-url>
+   </login>
+</object-persistence>

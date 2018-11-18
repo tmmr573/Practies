@@ -1,4 +1,3 @@
-1.
 CREATE TABLE students_admission_master
 (
   StudentId INTEGER not null,

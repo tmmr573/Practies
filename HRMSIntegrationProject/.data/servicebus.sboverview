@@ -7,6 +7,9 @@
         <ns:interface src="BusinessService:HRMSIntegrationProject/BS/CreateOrUpdateEmpData"/>
     </ns:reference>
     <ns:reference>
+        <ns:interface src="ProxyService:HRMSIntegrationProject/PS/UpdateStuAdmissionInfoLPS"/>
+    </ns:reference>
+    <ns:reference>
         <ns:interface src="BusinessService:HRMSIntegrationProject/BS/CreateOrUpdateStAdminMasterBS"/>
     </ns:reference>
     <ns:reference>
@@ -14,6 +17,9 @@
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:HRMSIntegrationProject/BS/CreateStudentID"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:HRMSIntegrationProject/BS/SelectOrUpdateStudentAdmissionInfoBS"/>
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:OSBUtilityService/BS/TechnicalErrorQueue/OracleSchoolDBErrorJMSBS"/>

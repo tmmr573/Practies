@@ -3,6 +3,7 @@
         <xsd:schema>
             <xsd:import namespace="http://www.example.org" schemaLocation="../xsd/CreateOrUpdateEmpData.xsd"/>
             <xsd:import namespace="http://www.example.org" schemaLocation="../xsd/CreateOrUpdateStuAdminMaster.xsd"/>
+            <xsd:import namespace="http://www.example.org" schemaLocation="../xsd/UpdateStuAdmissionInfo.xsd"/>
         </xsd:schema>
     </wsdl:types>
     <wsdl:message name="requestMessage">
@@ -11,6 +12,9 @@
     <wsdl:message name="SturequestMessage">
         <wsdl:part name="HRMSStuDataIn" element="inp1:CreateOrUpdateStuAdminMaster"/>
     </wsdl:message>
+     <wsdl:message name="StuUpdateInfoMessage">
+        <wsdl:part name="HRMSStuDataInfo" element="inp1:StudentsAdmissionInfo"/>
+    </wsdl:message>
     
     <wsdl:portType name="execute_ptt">
         <wsdl:operation name="CreateOrUpdateEmpData">
@@ -18,6 +22,9 @@
         </wsdl:operation>
         <wsdl:operation name="CreateOrUpdateStuAdminMaster">
             <wsdl:input message="tns:SturequestMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="StudentsAdmissionInfo">
+            <wsdl:input message="tns:StuUpdateInfoMessage"/>
         </wsdl:operation>
         
     </wsdl:portType>
@@ -31,6 +38,12 @@
         </wsdl:operation>
         <wsdl:operation name="CreateOrUpdateStuAdminMaster">
             <soap:operation style="document" soapAction="CreateOrUpdateStuAdminMaster"/>
+            <wsdl:input>
+                <soap:body use="literal" namespace="http://xmlns.oracle.com/osb/HRMSIntegrationProject/CreateOrUpdateHRMSDataPS"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="StudentsAdmissionInfo">
+            <soap:operation style="document" soapAction="UpdateStuAdmissionInfo"/>
             <wsdl:input>
                 <soap:body use="literal" namespace="http://xmlns.oracle.com/osb/HRMSIntegrationProject/CreateOrUpdateHRMSDataPS"/>
             </wsdl:input>

@@ -1,0 +1,78 @@
+<adapter-config name="SelectOrUpdateStudentAdmissionInfoBS" adapter="db" wsdlLocation="SelectOrUpdateStudentAdmissionInfoBS.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="SchoolDBCon" location="eis/DB/SchoolDS"/>
+  <endpoint-interaction portType="SelectOrUpdateStudentAdmissionInfoBS_ptt" operation="merge">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SelectOrUpdateStudentAdmissionInfoBS.StudentsAdmissionInfo"/>
+      <property name="DmlType" value="merge"/>
+      <property name="MappingsMetaDataURL" value="SelectOrUpdateStudentAdmissionInfoBS-or-mappings.xml"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="SelectOrUpdateStudentAdmissionInfoBS_ptt" operation="insert">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SelectOrUpdateStudentAdmissionInfoBS.StudentsAdmissionInfo"/>
+      <property name="DmlType" value="insert"/>
+      <property name="MappingsMetaDataURL" value="SelectOrUpdateStudentAdmissionInfoBS-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="SelectOrUpdateStudentAdmissionInfoBS_ptt" operation="update">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SelectOrUpdateStudentAdmissionInfoBS.StudentsAdmissionInfo"/>
+      <property name="DmlType" value="update"/>
+      <property name="MappingsMetaDataURL" value="SelectOrUpdateStudentAdmissionInfoBS-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="SelectOrUpdateStudentAdmissionInfoBS_ptt" operation="delete">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SelectOrUpdateStudentAdmissionInfoBS.StudentsAdmissionInfo"/>
+      <property name="DmlType" value="delete"/>
+      <property name="MappingsMetaDataURL" value="SelectOrUpdateStudentAdmissionInfoBS-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="SelectOrUpdateStudentAdmissionInfoBS_ptt" operation="SelectOrUpdateStudentAdmissionInfoBSSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="SelectOrUpdateStudentAdmissionInfoBS.StudentsAdmissionInfo"/>
+      <property name="QueryName" value="SelectOrUpdateStudentAdmissionInfoBSSelect"/>
+      <property name="MappingsMetaDataURL" value="SelectOrUpdateStudentAdmissionInfoBS-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="SelectOrUpdateStudentAdmissionInfoBS_ptt" operation="selectByPrimaryKey">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="SelectOrUpdateStudentAdmissionInfoBS.StudentsAdmissionInfo"/>
+      <property name="QueryName" value="readObject"/>
+      <property name="MappingsMetaDataURL" value="SelectOrUpdateStudentAdmissionInfoBS-or-mappings.xml"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="SelectOrUpdateStudentAdmissionInfoBS_ptt" operation="queryByExample">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="SelectOrUpdateStudentAdmissionInfoBS.StudentsAdmissionInfo"/>
+      <property name="IsQueryByExample" value="true"/>
+      <property name="MappingsMetaDataURL" value="SelectOrUpdateStudentAdmissionInfoBS-or-mappings.xml"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+      <property name="QueryByExampleTextOperator" value="like"/>
+      <property name="QueryByExampleNumericOperator" value="like"/>
+      <property name="QueryByExampleDateOperator" value="like"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>
